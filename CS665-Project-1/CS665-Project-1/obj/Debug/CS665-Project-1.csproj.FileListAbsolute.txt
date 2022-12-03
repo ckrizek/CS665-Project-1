@@ -1,0 +1,14 @@
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\obj\Debug\CS665-Project-1.csproj.AssemblyReference.cache
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\obj\Debug\CS665-Project-1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\obj\Debug\CS665_Project_1.Form1.resources
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\obj\Debug\CS665_Project_1.Properties.Resources.resources
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\obj\Debug\CS665-Project-1.csproj.GenerateResource.cache
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\obj\Debug\CS665-Project-1.csproj.CoreCompileInputs.cache
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\bin\Debug\CS665-Project-1.exe.config
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\bin\Debug\CS665-Project-1.exe
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\bin\Debug\CS665-Project-1.pdb
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\bin\Debug\System.Data.SQLite.dll
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\bin\Debug\System.Data.SQLite.xml
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\obj\Debug\CS665-Project-1.csproj.CopyComplete
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\obj\Debug\CS665-Project-1.exe
+C:\Users\Cole\Desktop\Git\CS665-Project-1\CS665-Project-1\CS665-Project-1\obj\Debug\CS665-Project-1.pdb
