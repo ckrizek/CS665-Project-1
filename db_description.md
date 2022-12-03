@@ -31,7 +31,7 @@
 
 * The following allow our application Roomers to store data on roommates, landlord, and the link of different features to those users.
 
-## Table 1 (Roommate)
+### Table 1 (Roommate)
 * Roommate table will help organize all personal information relating to roommate users. The table will have a Roommate ID(rid), Name(name), Username(username), Password(passwd), Email(email), Creation date(created_at), Gender(gender), Address(addr), State(state), Country(country).
 
 ## Table 2 (LandLord)
