@@ -44,7 +44,7 @@
 * Sign up table will bwe utilized for roommates or landlords to be able to sign up for the first time. The table will have a Roommate ID(rid), Landlord ID(lid), Name(name), Username(username), Password(passwd), Email(email), Creation date(created_at), Gender(gender), Address(addr), State(state), Country(country).
 
 <a name="attributes"></a>
-## Attributes
+# Attributes
 
 #### Table 1 (Roommate)
 * Roommate ID(rid)
@@ -91,7 +91,7 @@
 * Country(country)
 
 <a name="primary-keys"></a>
-## Primary Keys
+# Primary Keys
 
 #### Table 1 (Roommate)
 * Roommate ID(rid)
@@ -108,11 +108,10 @@
 * Only foreign Keys
 
 <a name="foreign-keys"></a>
-## Foreign Keys
+# Foreign Keys
 
 #### Table 1 (Roommate)
 * Username(username)
-
 
 #### Table 2 (LandLord)
 * Username(username)
@@ -126,15 +125,13 @@
 * Username(username)
 
 <a name="fd"></a>
-## Function Dependancies
-
-
+# Function Dependancies
 
 <a name="trigger"></a>
-## Triggers and Policies
+# Triggers and Policies
 
 <a name="3nf"></a>
-## 3NF
+# 3NF
 
 <a name="sample-data"></a>
-## Sample Data
+# Sample Data
