@@ -47,48 +47,48 @@
 # Attributes
 
 #### Table 1 (Roommate)
-* Roommate ID(rid)
-* Name(name)
-* Username(username)
-* Password(passwd)
-* Email(email)
-* Creation date(created_at)
-* Gender(gender)
-* Address(addr)
-* State(state)
-* Country(country).
+* Roommate ID(rid), int
+* Name(name), string
+* Username(username), string
+* Password(passwd), string
+* Email(email), string
+* Creation date(created_at), date
+* Gender(gender), bool
+* Address(addr), string
+* State(state), string
+* Country(country), string
 
 #### Table 2 (LandLord)
-* Landlord ID(lid)
-* Name(name)
-* Username(username)
-* Password(passwd)
-* Email(email)
-* Creation date(created_at)
-* Gender(gender)
-* Address(addr)
-* State(state)
-* Country(country)
+* Landlord ID(lid), int
+* Name(name), string
+* Username(username), string
+* Password(passwd), string
+* Email(email), string
+* Creation date(created_at), date
+* Gender(gender), bool
+* Address(addr), string
+* State(state), string
+* Country(country), string
 
 #### Table 3 (Login)
-* Roommate ID(rid)
-* Landlord ID(lid)
-* Username(username)
-* Password(passwd)
-* Remember login(rememb_login)
+* Roommate ID(rid), int
+* Landlord ID(lid), int
+* Username(username), string
+* Password(passwd), string
+* Remember login(rememb_login), bool
 
 #### Table 4 (Signup)
-* Roommate ID(rid)
-* Landlord ID(lid)
-* Name(name)
-* Username(username)
-* Password(passwd)
-* Email(email)
-* Creation date(created_at)
-* Gender(gender)
-* Address(addr)
-* State(state)
-* Country(country)
+* Roommate ID(rid), int
+* Landlord ID(lid), int
+* Name(name), string
+* Username(username), string
+* Password(passwd), string
+* Email(email), string
+* Creation date(created_at), date
+* Gender(gender), bool
+* Address(addr), string
+* State(state), string
+* Country(country), string
 
 <a name="primary-keys"></a>
 # Primary Keys
