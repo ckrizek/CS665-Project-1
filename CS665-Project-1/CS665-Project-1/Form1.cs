@@ -58,7 +58,7 @@ namespace CS665_Project_1
             }
             else
             {
-                Console.WriteLine("Database cannot create");
+                Console.WriteLine("Database already exists.");
                 return;
             }
         }
