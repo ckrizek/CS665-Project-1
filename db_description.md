@@ -117,7 +117,7 @@
 * Username(username)
 
 #### Table 3 (Login)
-* Username(username)
+No Foreign Keys
 
 #### Table 4 (Signup)
 * Roommate ID(rid)
