@@ -136,6 +136,11 @@ No Foreign Keys
 <a name="3nf"></a>
 # 3NF
 
+* The database I have created for my senior design project is in 3NF. This is because I followed the 2 Rules of 3NF.
+1. The LHS of each FD is a Super Key.
+2. The RHS is a Prime attribute.
+3. The relational database is in 2NF.
+
 <a name="sample-data"></a>
 # Sample Data
 
