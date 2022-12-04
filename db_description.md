@@ -138,3 +138,14 @@ No Foreign Keys
 
 <a name="sample-data"></a>
 # Sample Data
+
+![image](https://user-images.githubusercontent.com/74672038/205476774-03ed126c-13b3-4b93-a239-9c25a33f68aa.png)
+
+
+![image](https://user-images.githubusercontent.com/74672038/205476765-11b4740e-70a8-43ff-bbf5-0747db76e615.png)
+
+
+![image](https://user-images.githubusercontent.com/74672038/205476782-7eb1399a-6ab8-418b-8d34-0bcc1574d9fc.png)
+
+
+![image](https://user-images.githubusercontent.com/74672038/205476964-aff1ee6f-c1e9-43b3-a79e-e61be808e8bc.png)
