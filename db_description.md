@@ -130,8 +130,57 @@ No Foreign Keys
 <a name="fd"></a>
 # Function Dependancies
 
+#### Table 1 (Roommate)
+* rid -> name, username, passwd, email, created_at, gender, addr, state, country, Zip
+* username -> rid, name, passwd, email, created_at, gender, addr, state, country, Zip
+* email -> rid, name, passwd, email, created_at, gender, addr, state, country, Zip
+* passwd -> username
+* name, addr -> state, country, Zip
+* Zip -> state, country
+
+#### Table 2 (LandLord)
+* lid -> name, username, passwd, email, created_at, gender, addr, state, country, Zip
+* username -> lid, name, passwd, email, created_at, gender, addr, state, country, Zip
+* email -> lid, name, passwd, email, created_at, gender, addr, state, country, Zip
+* passwd -> username
+* name, addr -> state, country, zip
+* Zip -> state, country
+
+#### Table 3 (Login)
+* username -> rid, lid, passwd, rememb_login
+* lid, passwd -> username, rememb_login
+* rid, passwd -> username, rememb_login
+* rid, lid -> username, passwd, rememb_login
+
+#### Table 4 (Signup)
+* rid, lid -> name, username, passwd, email, created_at, gender, addr, state, country, Zip
+* username -> rid, lid, passwd, email, created_at, gender, addr, state, country, Zip
+* email -> rid, lid, name, username, passwd, email, create_at, gender, addr, state, country, Zip
+* passwd -> username
+* name, addr -> state, country, Zip
+* Zip -> state, country
+
+
 <a name="trigger"></a>
 # Triggers and Policies
+
+* The triggers and policies in my database are mostly requirements for field input and auto generation of derived information. Tables 1 and 2 only store information provided from the signup and login data tables.
+
+#### Table 3 (Login)
+* Require username.
+* Require passwd.
+* Auto generate rememb_login based off of radio button selection. Boolean value.
+
+
+#### Table 4 (Signup)
+* Auto generate rid or lid based on radio button selection for a roommate or landlord. Pick next lowest number in the rid, lid stack.
+* Require name.
+* Require username.
+* Require passwd.
+* Require email.
+* Auto generate Creation Date under the hood when user submits signup form. This will pull date from interview OS and place it in the creation_at column.
+* Auto generate Zip code for combination of Address, State, Country, if not provided.
+
 
 <a name="3nf"></a>
 # 3NF
