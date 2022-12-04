@@ -57,6 +57,7 @@
 * Address(addr), string
 * State(state), string
 * Country(country), string
+* ZIP Code(zip), int
 
 #### Table 2 (LandLord)
 * Landlord ID(lid), int
@@ -69,6 +70,7 @@
 * Address(addr), string
 * State(state), string
 * Country(country), string
+* ZIP Code(zip), int
 
 #### Table 3 (Login)
 * Roommate ID(rid), int
@@ -89,6 +91,7 @@
 * Address(addr), string
 * State(state), string
 * Country(country), string
+* ZIP Code(zip), int
 
 <a name="primary-keys"></a>
 # Primary Keys
