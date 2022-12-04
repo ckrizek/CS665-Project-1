@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Nicholas Krizek | CS665 CRUD APPLICATION | 27NOV2022
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,7 +41,7 @@ namespace CS665_Project_1
 
             while (dr.Read())
             {
-                dataGridView1.Rows.Insert(0, dr.GetString(0), dr.GetString(1));
+                dataGridView1.Rows.Insert(0, dr.GetValue(0), dr.GetValue(1), dr.GetValue(2), dr.GetValue(3), dr.GetValue(4), dr.GetValue(5), dr.GetValue(6), dr.GetValue(7), dr.GetValue(8));
             }
         }
 
@@ -51,8 +53,7 @@ namespace CS665_Project_1
                 using (var sqlite = new SQLiteConnection(@"Data Source=" + path))
                 {
                     sqlite.Open();
-                    string roommate_sql = "create table roommate(rid int, name varchar(20), username string, email string" +
-                        "created_at date, gender bool, addr string, state string, country string)";
+                    string roommate_sql = "create table roommate(id string, name string, username string, email string, created string, gender string, addr string, state string, country string)";
                     SQLiteCommand command = new SQLiteCommand(roommate_sql, sqlite);
                     command.ExecuteNonQuery();
                 }
@@ -72,9 +73,7 @@ namespace CS665_Project_1
 
             try
             {
-                cmd.CommandText = "INSERT INTO roommate(rid int, name varchar(20), username string, email string" +
-                        "created_at date, gender bool, addr string, state string, country string VALUES(@id, @name, @username, @email, " +
-                        "@created_at, @gender, @addr, @state, @country)";
+                cmd.CommandText = "INSERT INTO roommate (id, name, Username, Email, Created, Gender, Addr, State, Country) VALUES (@id, @name, @Username, @Email, @Created, @Gender, @Addr, @State, @Country)";
 
                 string NAME = name_txt.Text;
                 string ID = id_txt.Text;
@@ -88,20 +87,20 @@ namespace CS665_Project_1
 
                 cmd.Parameters.AddWithValue("@name", NAME);
                 cmd.Parameters.AddWithValue("@id", ID);
-                cmd.Parameters.AddWithValue("@username", USERNAME);
-                cmd.Parameters.AddWithValue("@email", EMAIL);
-                cmd.Parameters.AddWithValue("@created_at", CREATED_AT);
-                cmd.Parameters.AddWithValue("@gender", GENDER);
-                cmd.Parameters.AddWithValue("@addr", ADDR);
-                cmd.Parameters.AddWithValue("@state", STATE);
-                cmd.Parameters.AddWithValue("@country", COUNTRY);
+                cmd.Parameters.AddWithValue("@Username", USERNAME);
+                cmd.Parameters.AddWithValue("@Email", EMAIL);
+                cmd.Parameters.AddWithValue("@Created", CREATED_AT);
+                cmd.Parameters.AddWithValue("@Gender", GENDER);
+                cmd.Parameters.AddWithValue("@Addr", ADDR);
+                cmd.Parameters.AddWithValue("@State", STATE);
+                cmd.Parameters.AddWithValue("@Country", COUNTRY);
 
                 dataGridView1.ColumnCount = 9;
-                dataGridView1.Columns[0].Name = "Id";
-                dataGridView1.Columns[1].Name = "Name";
+                dataGridView1.Columns[0].Name = "id";
+                dataGridView1.Columns[1].Name = "name";
                 dataGridView1.Columns[2].Name = "Username";
                 dataGridView1.Columns[3].Name = "Email";
-                dataGridView1.Columns[4].Name = "Creation Date";
+                dataGridView1.Columns[4].Name = "Created";
                 dataGridView1.Columns[5].Name = "Gender";
                 dataGridView1.Columns[6].Name = "Address";
                 dataGridView1.Columns[7].Name = "State";
@@ -129,14 +128,13 @@ namespace CS665_Project_1
 
             try
             {
-                cmd.CommandText = "UPDATE roommate Set username=@Username, email=@Email, created_at=@Created_at, gender=@Gender, addr=@Addr" +
-                    "state=@State, country=@Country where id=@Id";
+                cmd.CommandText = "UPDATE roommate Set name=@name, username=@Username, email=@Email, created=@Created, gender=@Gender, addr=@Addr, state=@State, country=@Country where id=@id";
                 cmd.Prepare();
-                cmd.Parameters.AddWithValue("@Name", name_txt.Text);
-                cmd.Parameters.AddWithValue("@Id", id_txt.Text);
+                cmd.Parameters.AddWithValue("@name", name_txt.Text);
+                cmd.Parameters.AddWithValue("@id", id_txt.Text);
                 cmd.Parameters.AddWithValue("@Username", username_txt.Text);
                 cmd.Parameters.AddWithValue("@Email", email_txt.Text);
-                cmd.Parameters.AddWithValue("@Created_at", created_at_txt.Text);
+                cmd.Parameters.AddWithValue("@Created", created_at_txt.Text);
                 cmd.Parameters.AddWithValue("@Gender", gender_txt.Text);
                 cmd.Parameters.AddWithValue("@Addr", addr_txt.Text);
                 cmd.Parameters.AddWithValue("@State", state_txt.Text);
@@ -165,12 +163,13 @@ namespace CS665_Project_1
 
             try
             {
-                cmd.CommandText = "DELETE FROM roommate where Id=@Id";
+                cmd.CommandText = "DELETE FROM roommate where id=@id";
                 cmd.Prepare();
-                cmd.Parameters.AddWithValue("@Name", name_txt.Text);
+                cmd.Parameters.AddWithValue("@name", name_txt.Text);
+                cmd.Parameters.AddWithValue("@id", id_txt.Text);
                 cmd.Parameters.AddWithValue("@Username", username_txt.Text);
                 cmd.Parameters.AddWithValue("@Email", email_txt.Text);
-                cmd.Parameters.AddWithValue("@Created_at", created_at_txt.Text);
+                cmd.Parameters.AddWithValue("@Created", created_at_txt.Text);
                 cmd.Parameters.AddWithValue("@Gender", gender_txt.Text);
                 cmd.Parameters.AddWithValue("@Addr", addr_txt.Text);
                 cmd.Parameters.AddWithValue("@State", state_txt.Text);
@@ -227,11 +226,11 @@ namespace CS665_Project_1
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 dataGridView1.CurrentRow.Selected = true;
-                name_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Name"].FormattedValue.ToString();
-                id_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString();
+                name_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["name"].FormattedValue.ToString();
+                id_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["id"].FormattedValue.ToString();
                 username_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Username"].FormattedValue.ToString();
                 email_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Email"].FormattedValue.ToString();
-                created_at_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Created_at"].FormattedValue.ToString();
+                created_at_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Created"].FormattedValue.ToString();
                 gender_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Gender"].FormattedValue.ToString();
                 addr_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Addr"].FormattedValue.ToString();
                 state_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["State"].FormattedValue.ToString();

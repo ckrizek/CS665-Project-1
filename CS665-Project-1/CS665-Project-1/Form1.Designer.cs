@@ -51,11 +51,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.country_txt = new System.Windows.Forms.TextBox();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Created_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Created = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,11 +137,11 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
+            this.id,
             this.name,
             this.Username,
             this.Email,
-            this.Created_at,
+            this.Created,
             this.Gender,
             this.Address,
             this.State,
@@ -329,10 +329,10 @@
             this.country_txt.TabIndex = 23;
             this.country_txt.TextChanged += new System.EventHandler(this.country_txt_TextChanged);
             // 
-            // Id
+            // id
             // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
             // 
             // name
             // 
@@ -349,10 +349,10 @@
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             // 
-            // Created_at
+            // Created
             // 
-            this.Created_at.HeaderText = "Created_at";
-            this.Created_at.Name = "Created_at";
+            this.Created.HeaderText = "Created";
+            this.Created.Name = "Created";
             // 
             // Gender
             // 
@@ -438,11 +438,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox country_txt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Created_at;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Created;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn State;
