@@ -57,7 +57,7 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Created = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Addr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Country = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -143,11 +143,11 @@
             this.Email,
             this.Created,
             this.Gender,
-            this.Address,
+            this.Addr,
             this.State,
             this.Country});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.Location = new System.Drawing.Point(678, 266);
+            this.dataGridView1.Location = new System.Drawing.Point(629, 188);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(944, 491);
@@ -359,10 +359,10 @@
             this.Gender.HeaderText = "Gender";
             this.Gender.Name = "Gender";
             // 
-            // Address
+            // Addr
             // 
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
+            this.Addr.HeaderText = "Address";
+            this.Addr.Name = "Addr";
             // 
             // State
             // 
@@ -444,7 +444,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Created;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Addr;
         private System.Windows.Forms.DataGridViewTextBoxColumn State;
         private System.Windows.Forms.DataGridViewTextBoxColumn Country;
     }
