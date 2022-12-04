@@ -14,8 +14,8 @@ namespace CS665_Project_1
     public partial class Form1 : Form
     {
         
-        string path = "data_table.db";
-        string cs = @"URI=file:"+Application.StartupPath+"\\data_table.db";
+        string path = "roomers_database.db";
+        string cs = @"URI=file:"+Application.StartupPath+"\\roomers_database.db";
 
         SQLiteConnection con;
         SQLiteCommand cmd;
@@ -33,7 +33,7 @@ namespace CS665_Project_1
             var con = new SQLiteConnection(cs);
             con.Open();
 
-            string stm = "SELECT * FROM test";
+            string stm = "SELECT * FROM roommate";
             var cmd = new SQLiteCommand(stm, con);
             dr = cmd.ExecuteReader();
 
@@ -51,8 +51,9 @@ namespace CS665_Project_1
                 using (var sqlite = new SQLiteConnection(@"Data Source=" + path))
                 {
                     sqlite.Open();
-                    string sql = "create table test(name varchar(20),id varchar(12))";
-                    SQLiteCommand command = new SQLiteCommand(sql, sqlite);
+                    string roommate_sql = "create table roommate(rid int, name varchar(20), username string, email string" +
+                        "created_at date, gender bool, addr string, state string, country string)";
+                    SQLiteCommand command = new SQLiteCommand(roommate_sql, sqlite);
                     command.ExecuteNonQuery();
                 }
             }
@@ -71,18 +72,41 @@ namespace CS665_Project_1
 
             try
             {
-                cmd.CommandText = "INSERT INTO test(name,id) VALUES(@name,@id)";
+                cmd.CommandText = "INSERT INTO roommate(rid int, name varchar(20), username string, email string" +
+                        "created_at date, gender bool, addr string, state string, country string VALUES(@id, @name, @username, @email, " +
+                        "@created_at, @gender, @addr, @state, @country)";
 
                 string NAME = name_txt.Text;
                 string ID = id_txt.Text;
+                string USERNAME = username_txt.Text;
+                string EMAIL = email_txt.Text;
+                string CREATED_AT = created_at_txt.Text;
+                string GENDER = gender_txt.Text;
+                string ADDR = addr_txt.Text;
+                string STATE = state_txt.Text;
+                string COUNTRY = country_txt.Text;
 
                 cmd.Parameters.AddWithValue("@name", NAME);
                 cmd.Parameters.AddWithValue("@id", ID);
+                cmd.Parameters.AddWithValue("@username", USERNAME);
+                cmd.Parameters.AddWithValue("@email", EMAIL);
+                cmd.Parameters.AddWithValue("@created_at", CREATED_AT);
+                cmd.Parameters.AddWithValue("@gender", GENDER);
+                cmd.Parameters.AddWithValue("@addr", ADDR);
+                cmd.Parameters.AddWithValue("@state", STATE);
+                cmd.Parameters.AddWithValue("@country", COUNTRY);
 
-                dataGridView1.ColumnCount = 2;
-                dataGridView1.Columns[0].Name = "Name";
-                dataGridView1.Columns[1].Name = "Id";
-                string[] row = new string[] { NAME, ID };
+                dataGridView1.ColumnCount = 9;
+                dataGridView1.Columns[0].Name = "Id";
+                dataGridView1.Columns[1].Name = "Name";
+                dataGridView1.Columns[2].Name = "Username";
+                dataGridView1.Columns[3].Name = "Email";
+                dataGridView1.Columns[4].Name = "Creation Date";
+                dataGridView1.Columns[5].Name = "Gender";
+                dataGridView1.Columns[6].Name = "Address";
+                dataGridView1.Columns[7].Name = "State";
+                dataGridView1.Columns[8].Name = "Country";
+                string[] row = new string[] { ID, NAME, USERNAME, EMAIL, CREATED_AT, GENDER, ADDR, STATE, COUNTRY };
                 dataGridView1.Rows.Add(row);
 
                 cmd.ExecuteNonQuery();
@@ -105,14 +129,23 @@ namespace CS665_Project_1
 
             try
             {
-                cmd.CommandText = "UPDATE test Set id=@Id where name =@Name";
+                cmd.CommandText = "UPDATE roommate Set username=@Username, email=@Email, created_at=@Created_at, gender=@Gender, addr=@Addr" +
+                    "state=@State, country=@Country where id=@Id";
                 cmd.Prepare();
                 cmd.Parameters.AddWithValue("@Name", name_txt.Text);
                 cmd.Parameters.AddWithValue("@Id", id_txt.Text);
+                cmd.Parameters.AddWithValue("@Username", username_txt.Text);
+                cmd.Parameters.AddWithValue("@Email", email_txt.Text);
+                cmd.Parameters.AddWithValue("@Created_at", created_at_txt.Text);
+                cmd.Parameters.AddWithValue("@Gender", gender_txt.Text);
+                cmd.Parameters.AddWithValue("@Addr", addr_txt.Text);
+                cmd.Parameters.AddWithValue("@State", state_txt.Text);
+                cmd.Parameters.AddWithValue("@Country", country_txt.Text);
 
                 cmd.ExecuteNonQuery();
                 dataGridView1.Rows.Clear();
                 data_show();
+
 
             }
             catch (Exception)
@@ -132,9 +165,16 @@ namespace CS665_Project_1
 
             try
             {
-                cmd.CommandText = "DELETE FROM test where name =@Name";
+                cmd.CommandText = "DELETE FROM roommate where Id=@Id";
                 cmd.Prepare();
                 cmd.Parameters.AddWithValue("@Name", name_txt.Text);
+                cmd.Parameters.AddWithValue("@Username", username_txt.Text);
+                cmd.Parameters.AddWithValue("@Email", email_txt.Text);
+                cmd.Parameters.AddWithValue("@Created_at", created_at_txt.Text);
+                cmd.Parameters.AddWithValue("@Gender", gender_txt.Text);
+                cmd.Parameters.AddWithValue("@Addr", addr_txt.Text);
+                cmd.Parameters.AddWithValue("@State", state_txt.Text);
+                cmd.Parameters.AddWithValue("@Country", country_txt.Text);
 
                 cmd.ExecuteNonQuery();
                 dataGridView1.Rows.Clear();
@@ -189,7 +229,74 @@ namespace CS665_Project_1
                 dataGridView1.CurrentRow.Selected = true;
                 name_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Name"].FormattedValue.ToString();
                 id_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString();
+                username_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Username"].FormattedValue.ToString();
+                email_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Email"].FormattedValue.ToString();
+                created_at_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Created_at"].FormattedValue.ToString();
+                gender_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Gender"].FormattedValue.ToString();
+                addr_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Addr"].FormattedValue.ToString();
+                state_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["State"].FormattedValue.ToString();
+                country_txt.Text = dataGridView1.Rows[e.RowIndex].Cells["Country"].FormattedValue.ToString();
             }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void created_at_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gender_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addr_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void state_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void country_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
