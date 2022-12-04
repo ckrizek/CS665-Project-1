@@ -17,14 +17,14 @@
 <a name="database-overview"></a>
 ## Database Overview
 
-* My database is based off of my Senior Design project Roomers. Roomers is a web-based application to ease the frustrations of having a roommate.
-* The general requires for this database is to fufill basic requirements of our site. Our three major features for this application are...
+* My database is based off my Senior Design project Roomers. Roomers is a web-based application to ease the frustrations of having a roommate.
+* The general requires for this database is to fulfill basic requirements of our site. Our three major features for this application are...
 
   1. A financial tab that helps roommates navigate splitting, paying, and staying on time with bills.
-  2. A calender tab that will sync roommates calendars to allow eachother to know when others will be home, when they have class, and other general calender information.
+  2. A calendar tab that will sync roommates calendars to allow each other to know when others will be home, when they have class, and other general calendar information.
   3. A communication system that will allow roommate to roommate as well as roommate to landlord communication. This will ease the stress of giving out personal information such as cell phones numbers but allow open communication throughout the household.
 
-* The layout of my database will be widely based of off general personal information, log in, and sign up details. As this is an exstensive data for the whole project I will focus strictly on betting the intial user databases for the CS665 Project.
+* The layout of my database will be widely based off general personal information, log in, and sign-up details. As this is an extensive data for project, I will focus strictly on building the initial user databases for the CS665 Project.
 
 <a name="tables"></a>
 # Tables
@@ -41,7 +41,7 @@
 * Login table will be utilized for roommates and landlords to be able to log into the application. This table will include Roommate ID(rid), Landlord ID(lid), Username(username), Password(passwd), Remember login(rememb_login).
 
 #### Table 4 (Signup)
-* Sign up table will bwe utilized for roommates or landlords to be able to sign up for the first time. The table will have a Roommate ID(rid), Landlord ID(lid), Name(name), Username(username), Password(passwd), Email(email), Creation date(created_at), Gender(gender), Address(addr), State(state), Country(country).
+* Sign up table will be utilized for roommates or landlords to be able to sign up for the first time. The table will have a Roommate ID(rid), Landlord ID(lid), Name(name), Username(username), Password(passwd), Email(email), Creation date(created_at), Gender(gender), Address(addr), State(state), Country(country).
 
 <a name="attributes"></a>
 # Attributes
@@ -128,7 +128,7 @@ No Foreign Keys
 * Username(username)
 
 <a name="fd"></a>
-# Function Dependancies
+# Function Dependencies
 
 #### Table 1 (Roommate)
 * rid -> name, username, passwd, email, created_at, gender, addr, state, country, Zip
@@ -176,7 +176,7 @@ No Foreign Keys
 * Require username.
 * Require passwd.
 * Update table with passwd hash to secure information.
-* Auto generate rememb_login based off of radio button selection. Boolean value.
+* Auto generate rememb_login based off radio button selection. Boolean value.
 
 
 #### Table 4 (Signup)
@@ -211,3 +211,4 @@ No Foreign Keys
 
 
 ![image](https://user-images.githubusercontent.com/74672038/205476964-aff1ee6f-c1e9-43b3-a79e-e61be808e8bc.png)
+
