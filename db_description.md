@@ -24,7 +24,7 @@
   2. A calender tab that will sync roommates calendars to allow eachother to know when others will be home, when they have class, and other general calender information.
   3. A communication system that will allow roommate to roommate as well as roommate to landlord communication. This will ease the stress of giving out personal information such as cell phones numbers but allow open communication throughout the household.
 
-* The layout of my database will be wildly based of off general personal information, log in, and sign up details. As this is an exstensive data for the whole project I will focus strictly on betting the intial user databases for the CS665 Project.
+* The layout of my database will be widely based of off general personal information, log in, and sign up details. As this is an exstensive data for the whole project I will focus strictly on betting the intial user databases for the CS665 Project.
 
 <a name="tables"></a>
 # Tables
