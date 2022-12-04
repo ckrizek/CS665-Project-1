@@ -166,9 +166,16 @@ No Foreign Keys
 
 * The triggers and policies in my database are mostly requirements for field input and auto generation of derived information. Tables 1 and 2 only store information provided from the signup and login data tables.
 
+#### Table 1 (Roommate)
+* Update table with passwd hash to secure information.
+
+#### Table 2 (Landlord)
+* Update table with passwd hash to secure information.
+
 #### Table 3 (Login)
 * Require username.
 * Require passwd.
+* Update table with passwd hash to secure information.
 * Auto generate rememb_login based off of radio button selection. Boolean value.
 
 
@@ -177,6 +184,7 @@ No Foreign Keys
 * Require name.
 * Require username.
 * Require passwd.
+* * Update table with passwd hash to secure information.
 * Require email.
 * Auto generate Creation Date under the hood when user submits signup form. This will pull date from interview OS and place it in the creation_at column.
 * Auto generate Zip code for combination of Address, State, Country, if not provided.
